@@ -34,40 +34,42 @@
             <a href="#" class="main-nav__item">About Us</a>
         </nav>
     </header>
-    <div class="cube-carousel">
-        <div class="cube">
-            <div class="cube__face cube__face--front">
+    <div class="box-carousel">
+        <div class="box">
+            <div class="face face--front">
                 <main id="main-image">
-                    <h1 id="slogan1">An academy</h1>
-                    <h1 id="slogan2">for the community</h1>
+                    <div id="slogan-container">
+                        <h1 id="slogan1">An academy</h1>
+                        <h1 id="slogan2">for the community</h1>
+                    </div>
                 </main>
             </div>
-            <div class="cube__face cube__face--back">Alim</div>
-            <div class="cube__face cube__face--right">Hifz</div>
-            <div class="cube__face cube__face--left">Islamic Studies</div>
-            <div class="cube__face cube__face--top">Academics</div>
-            <div class="cube__face cube__face--bottom">Tarbiyah</div>
+            <div class="face face--back">Alim</div>
+            <div class="face face--top">Academics</div>
+            <div class="face face--bottom">Tarbiyah</div>
+            <div class="face face--left">Islamic Studies</div>
+            <div class="face face--right">Hifz</div>
         </div>
     </div>
-    <div id="radio-group__container">
-        <p class="radio-group">
+    <div id="radio-selection__container">
+        <p class="radio-selection">
             <label>
-                <input type="radio" name="rotate-cube-side" value="front" checked /> Home
+                <input type="radio" name="change-side" value="front" checked /> Home
             </label>
             <label>
-                <input type="radio" name="rotate-cube-side" value="right" /> Hifz
+                <input type="radio" name="change-side" value="back" /> Alim
             </label>
             <label>
-                <input type="radio" name="rotate-cube-side" value="back" /> Alim
+                <input type="radio" name="change-side" value="top" /> Academics
             </label>
             <label>
-                <input type="radio" name="rotate-cube-side" value="left" /> Islamic Studies
+                <input type="radio" name="change-side" value="bottom" /> Tarbiyah
             </label>
             <label>
-                <input type="radio" name="rotate-cube-side" value="top" /> Academics
+                <input type="radio" name="change-side" value="left" /> Islamic Studies
             </label>
             <label>
-                <input type="radio" name="rotate-cube-side" value="bottom" /> Tarbiyah
+                <input type="radio" name="change-side" value="right" /> Hifz
             </label>
         </p>
     </div>

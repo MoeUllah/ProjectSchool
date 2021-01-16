@@ -1,8 +1,16 @@
 #main-image{
     background: linear-gradient(to top, rgba(244, 248, 1, 0.061) 10%, transparent),url("skyline.jpg") center/cover no-repeat border-box fixed,lightskyblue;
     height: 100vh;
+    overflow: scroll;
     position: relative;
 }
+
+#main-image::-webkit-scrollbar{
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 /* 
 Here I added multiple background images(image,radient
 and a solid red asd as a fallback color). The images 
@@ -10,23 +18,21 @@ are stacked on top of one another with the one on the
 left being on the top */
 
 #slogan1{
-    position: fixed;
-    top: 41vh;
-    left: 10vh;
+    position: relative;
+    top: 20vh;
+    left: 10vw;
     font-style: italic;
     color: rgb(53, 51, 51);
-    font-size: 50px;
-    margin-bottom: 20px;
+    font-size: 5.14vh;
 }
 
 #slogan2{
-    position: fixed;
-    top: 46vh;
-    left: 20vh;
+    position: relative;
+    top: 20vh;
+    left: 20vw;
     font-style: italic;
     color: rgb(53, 51, 51);
-    font-size: 50px;
-    margin-top: 20px;
+    font-size: 5.14vh;
 }
 
 header{
@@ -140,71 +146,65 @@ body,html{
     margin: 0;
 }
 
-
-.cube-carousel {
+.box-carousel {
     width: 100%;
     height: 100vh;
     margin-top: 50px;
-    overflow: scroll;
+    /* margin top matches header size so fixed */
+    overflow: hidden;
   }
-  .cube-carousel::-webkit-scrollbar{
-    display: none;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .cube {
+
+  .box {
     width: 100%;
-    height: 100vh;
-    position: relative;
     transform-style: preserve-3d;
-    transform: translateZ(-100px);
-    transition: transform 1s;
-  }
+    transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    height: 100vh;
+    }
+
+  .box.show-front  { transform:  rotateY(   0deg); }
+  .box.show-back   { transform:  rotateY(-180deg); }
+  .box.show-top    { transform:  rotateX( -90deg); }
+  .box.show-bottom { transform:  rotateX(  90deg); }
+  .box.show-left   { transform:  rotateY(  90deg); }
+  .box.show-right  { transform:  rotateY( -90deg); }
   
-  .cube.show-front  { transform: translateZ(-100px) rotateY(   0deg); }
-  .cube.show-right  { transform: translateZ(-100px) rotateY( -90deg); }
-  .cube.show-back   { transform: translateZ(-100px) rotateY(-180deg); }
-  .cube.show-left   { transform: translateZ(-100px) rotateY(  90deg); }
-  .cube.show-top    { transform: translateZ(-100px) rotateX( -90deg); }
-  .cube.show-bottom { transform: translateZ(-100px) rotateX(  90deg); }
-  
-  .cube__face {
+  .face {
     position: absolute;
     width: 100%;
     height: 100vh;
-    line-height: 200px;
-    font-size: 40px;
     font-weight: bold;
+    font-size: 50px;
     color: white;
-    text-align: center;
+    /* line-height: 200px; */
+    /* text-align: center; */
   }
   
-  .cube__face--front  { background: hsla(  0, 100%, 50%, 1.0); }
-  .cube__face--right  { background: hsla( 60, 100%, 50%, 1.0); }
-  .cube__face--back   { background: hsla(120, 100%, 50%, 1.0); }
-  .cube__face--left   { background: hsla(180, 100%, 50%, 1.0); }
-  .cube__face--top    { background: hsla(240, 100%, 50%, 1.0); }
-  .cube__face--bottom { background: hsla(300, 100%, 50%, 1.0); }
+  .face--front  { background:red; }
+  .face--back   { background: green; }
+  .face--top    { background: blue; }
+  .face--bottom { background: purple; }
+  .face--left   { background: skyblue }
+  .face--right  { background: yellow; }
   
-  .cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
-  .cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
-  .cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
-  .cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
-  .cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
-  .cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+  .face--front  { transform: rotateY(  0deg) translateZ(100vh); }
+  .face--back   { transform: rotateY(180deg) translateZ(100vh); }
+  .face--top    { transform: rotateX( 90deg) translateZ(100vh); }
+  .face--bottom { transform: rotateX(-90deg) translateZ(100vh); }
+  .face--left   { transform: rotateY(-90deg) translateZ(100vh); }
+  .face--right  { transform: rotateY( 90deg) translateZ(100vh); }
   
-  .radio-group{ 
-    padding-right: 10px; 
+  .radio-selection{ 
+    display: flex;
     position: absolute;
+    width: 100%;
     top: 50px;
     right: 0px;
     color: rgb(70, 70, 70);
-    font-size: 15px;
-    
+    font-size: 20px;
+    justify-content: center;
     }
 
-    .radio-group label{
+    .radio-selection label{
         display: inline-block;
         padding-right: 10px;
     }
@@ -266,3 +266,16 @@ body,html{
 
 /* 
 add height to elements if they overflow */
+
+/* removed translateZ from show faces*/
+
+/* from box class removed  */
+/* position: relative; */
+/* transform: translateZ(-100px); */
+
+/* .box-carousel::-webkit-scrollbar{
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+   */
