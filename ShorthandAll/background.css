@@ -1,0 +1,268 @@
+#main-image{
+    background: linear-gradient(to top, rgba(244, 248, 1, 0.061) 10%, transparent),url("skyline.jpg") center/cover no-repeat border-box fixed,lightskyblue;
+    height: 100vh;
+    position: relative;
+}
+/* 
+Here I added multiple background images(image,radient
+and a solid red asd as a fallback color). The images 
+are stacked on top of one another with the one on the 
+left being on the top */
+
+#slogan1{
+    position: fixed;
+    top: 41vh;
+    left: 10vh;
+    font-style: italic;
+    color: rgb(53, 51, 51);
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#slogan2{
+    position: fixed;
+    top: 46vh;
+    left: 20vh;
+    font-style: italic;
+    color: rgb(53, 51, 51);
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+header{
+    background-color: rgba(136, 205, 226, 0.698);
+    /* background-color: rgba(207, 133, 133, 0.212); */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 1.5rem;
+    padding: .3125rem;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 4;
+}
+
+#header-logo a{
+    color: rgba(0, 0, 0, 0.507);
+}
+
+.logo-link__container{
+    overflow: hidden;
+    
+}
+
+#logo-link__bar1{
+    position: absolute;
+    height: 1.875rem;
+    width: .9375rem;
+    background-color: rgba(255, 218, 6, 0.986);
+    bottom: 0px;
+    
+}
+
+#logo-link__item1{
+    position: absolute;
+    top: .3125rem;
+    left: .5rem;
+}
+
+#logo-link__bar2{
+    position: absolute;
+    height: 1.25rem;
+    width: .9375rem;
+    background-color: orange;
+    bottom: 0px;
+    left: 1.25rem;
+}
+
+#logo-link__item2{
+    position: absolute;
+    top: .96rem;
+    left: 1.3125rem;
+
+}
+
+#logo-link__bar3{
+    position: absolute;
+    height: .625rem;
+    width: .8375rem;
+    background-color: rgba(236, 0, 0, 0.753);
+    bottom: 0px;
+    left: 2.1875rem;
+}
+
+#logo-link__item3{
+    position: absolute;
+    top: 1.625rem;
+    left: 2.25rem;
+}
+
+#main-nav{
+    display: flex;
+    height: 2.5rem;
+    align-items: flex-end;
+}
+
+#main-nav a{
+    padding: 0rem .625rem;
+    margin-right: .3125rem;
+    /* color: rgb(189, 230, 243); */
+    color:rgb(3, 106, 158);
+    background-color: rgba(230, 4, 79, 0.438);
+    border-radius: .625rem;
+    border: solid black 2px;
+    box-shadow: .0625rem .0625rem .0625rem black;
+}
+
+footer *{
+    background-color:rgba(0, 0, 0, 0.829);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(0, 174, 255, 0.534);
+}
+
+a{
+    text-decoration: none;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+body,html{
+    height: 100%;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+.cube-carousel {
+    width: 100%;
+    height: 100vh;
+    margin-top: 50px;
+    overflow: scroll;
+  }
+  .cube-carousel::-webkit-scrollbar{
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .cube {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-100px);
+    transition: transform 1s;
+  }
+  
+  .cube.show-front  { transform: translateZ(-100px) rotateY(   0deg); }
+  .cube.show-right  { transform: translateZ(-100px) rotateY( -90deg); }
+  .cube.show-back   { transform: translateZ(-100px) rotateY(-180deg); }
+  .cube.show-left   { transform: translateZ(-100px) rotateY(  90deg); }
+  .cube.show-top    { transform: translateZ(-100px) rotateX( -90deg); }
+  .cube.show-bottom { transform: translateZ(-100px) rotateX(  90deg); }
+  
+  .cube__face {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    line-height: 200px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+  
+  .cube__face--front  { background: hsla(  0, 100%, 50%, 1.0); }
+  .cube__face--right  { background: hsla( 60, 100%, 50%, 1.0); }
+  .cube__face--back   { background: hsla(120, 100%, 50%, 1.0); }
+  .cube__face--left   { background: hsla(180, 100%, 50%, 1.0); }
+  .cube__face--top    { background: hsla(240, 100%, 50%, 1.0); }
+  .cube__face--bottom { background: hsla(300, 100%, 50%, 1.0); }
+  
+  .cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
+  .cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
+  .cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
+  .cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
+  .cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
+  .cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+  
+  .radio-group{ 
+    padding-right: 10px; 
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    color: rgb(70, 70, 70);
+    font-size: 15px;
+    
+    }
+
+    .radio-group label{
+        display: inline-block;
+        padding-right: 10px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+add height to elements if they overflow */
