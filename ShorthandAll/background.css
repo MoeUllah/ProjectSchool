@@ -1,293 +1,355 @@
-#main-image{
-    background: linear-gradient(to top, rgba(244, 248, 1, 0.061) 10%, transparent),url("skyline.jpg") center/cover no-repeat border-box fixed,lightskyblue;
-    height: 100vh;
-    width: 100%;
-    overflow: scroll;
-    position: relative;
-    
+#main-image {
+  background: linear-gradient(
+      to top,
+      rgba(255, 217, 0, 0.061) 100%,
+      rgba(255, 217, 0, 0.349)
+    ),
+    url("Mosque.jpg") center/cover no-repeat border-box scroll,
+    rgba(255, 217, 0, 0.349);
+  height: 100%;
+width: 100%;
+  overflow: scroll;
+  /* if main content splls out,scroll */
+  position: relative;
+  /* add cover plus min width of pic dimensions to get 
+  full picture, no cropping, without specifying a background 
+  image size which can lead to image not fitting container */
+
+  /* check pic dimensions it can lead to overflow or empty spaces,
+  check scroll local, and overflow hidden scroll */
+
+  /* homepage if you don't want to be scrollable got to tweak,`
+  leave scroll on background so zoom can be scroll, and
+  content doesn't go out of place */
 }
 
-#main-image::-webkit-scrollbar{
-    display: none;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+#main-image::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* 
 Here I added multiple background images(image,radient
 and a solid red asd as a fallback color). The images 
 are stacked on top of one another with the one on the 
-left being on the top */
+left being on the top 
 
-#slogan1{
-    position: fixed;
-    top: 20vh;
-    left: 10vw;
-    font-style: italic;
-    color: rgb(53, 51, 51);
-    font-size: 5.14vh;
+if zooming in and using fixed for background image,
+it doesn't scroll, use scroll then*/
+
+#slogan1 {
+  position: fixed;
+  top: 13rem;
+  left: 5rem;
+  font-style: italic;
+  color: rgb(245, 208, 0);
+  font-size: 3.25rem;
 }
 
-#slogan2{
-    position: fixed;
-    top: 25vh;
-    left: 20vw;
-    font-style: italic;
-    color: rgb(53, 51, 51);
-    font-size: 5.14vh;
+#slogan2 {
+  position: fixed;
+  top: 16rem;
+  left: 9.4rem;
+  font-style: italic;
+  color: gold;
+  font-size: 3.25rem;
+}
+/* 
+viewport units dont scale up on zoom 
+if we do rem it scales up with zoom
+same with px but not if default changes*/
+
+#main-paragraph {
+  font-size: 1.56rem;
+  width: 25%;
+  position: fixed;
+  top: 20rem;
+  left: 20rem;
+  text-align: center;
 }
 
-#main-paragraph{
-    font-size: 2.5vh;
-   width: 25%;
-    position: absolute;
-    top: 32vh;
-    left: 40vw;
-    text-align: center;
+header {
+  /* background-color: rgba(136, 205, 226, 0.698); */
+  /* background-image: linear-gradient(to top right, skyblue, pink 50%, yellow); */
+  /* linear gradient if 3 colors use 2 percentages, one less */
+  /* background-color: rgba(246, 246, 246, 0.472); */
+  background-color: rgba(255, 217, 0, 0.349);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 1.5rem;
+  padding: 0.3125rem;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 4;
+  min-width: 1920px;
 }
 
-header{
-    background-color: rgba(136, 205, 226, 0.698);
-    /* background-color: rgba(207, 133, 133, 0.212); */
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    font-size: 1.5rem;
-    padding: .3125rem;
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    z-index: 4;
-    min-width: 800px;
+#header-logo {
+  height: 6.25rem;
+  width: 12.5rem;
 }
 
-#header-logo a{
-    color: rgba(0, 0, 0, 0.507);
+#header-logo a,
+#layer1 g {
+  color: rgb(246, 177, 0);
+  fill: rgb(246, 177, 0) !important;
 }
 
-.logo-link__container{
-    overflow: hidden;
-    
+#header-logo:hover * {
+  color: white;
+  fill: white;
 }
 
-#logo-link__bar1{
-    position: absolute;
-    height: 1.875rem;
-    width: .9375rem;
-    background-color: rgba(255, 218, 6, 0.986);
-    bottom: 0px;
-    
+#header-logo:hover .link__bar {
+  background-color: white;
+  filter: brightness(100%);
+  /* need to use important, parent has same level specificty */
 }
 
-#logo-link__item1{
-    position: absolute;
-    top: .3125rem;
-    left: .5rem;
+/* can hover from parent using hover on parent then nesting child */
+
+.logo-link__container {
+  overflow: hidden;
 }
 
-#logo-link__bar2{
-    position: absolute;
-    height: 1.25rem;
-    width: .9375rem;
-    background-color: orange;
-    bottom: 0px;
-    left: 1.25rem;
+#logo-link__bar1 {
+  position: absolute;
+  height: 4.11rem;
+  width: 2rem;
+  background-color: rgb(246, 177, 0);
+  bottom: 0px;
 }
 
-#logo-link__item2{
-    position: absolute;
-    top: .96rem;
-    left: 1.3125rem;
-
+#logo-link__item1 {
+  position: absolute;
+  font-size: 1.875rem;
+  top: 1.05rem;
+  left: 1rem;
 }
 
-#logo-link__bar3{
-    position: absolute;
-    height: .625rem;
-    width: .8375rem;
-    background-color: rgba(236, 0, 0, 0.753);
-    bottom: 0px;
-    left: 2.1875rem;
+#logo-link__bar2 {
+  position: absolute;
+  height: 3.11rem;
+  width: 2rem;
+  background-color: rgb(246, 177, 0);
+  bottom: 0px;
+  left: 2.3rem;
 }
 
-#logo-link__item3{
-    position: absolute;
-    top: 1.625rem;
-    left: 2.25rem;
+#logo-link__item2 {
+  position: absolute;
+  top: 0.405rem;
+  left: 2.4rem;
+  height: 5rem;
+  width: 1.875rem;
 }
 
-#main-nav{
-    display: flex;
-    height: 2.5rem;
-    align-items: flex-end;
+#logo-link__bar3 {
+  position: absolute;
+  height: 2.31rem;
+  width: 2rem;
+  background-color: rgb(246, 177, 0);
+  bottom: 0px;
+  left: 4.3rem;
 }
 
-#main-nav a{
-    padding: 0rem .625rem;
-    margin-right: .3125rem;
-    /* color: rgb(189, 230, 243); */
-    color:rgb(3, 106, 158);
-    background-color: rgba(230, 4, 79, 0.438);
-    border-radius: .625rem;
-    border: solid black 2px;
-    box-shadow: .0625rem .0625rem .0625rem black;
+#logo-link__item3 {
+  position: absolute;
+  top: 2.85rem;
+  left: 4.7rem;
+  font-size: 1.875rem;
 }
 
-footer *{
-    background-color:rgba(0, 0, 0, 0.829);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: rgba(0, 174, 255, 0.534);
+#main-nav {
+  display: flex;
+  height: 2.5rem;
+  align-items: flex-end;
 }
 
-a{
-    text-decoration: none;
-}
-body{
-    display: flex;
-    flex-direction: column;
-    min-width: 800px;
-}
-
-body, html{
-    height: 100%;
-}
-
-*{
-    box-sizing: border-box;
-    margin: 0;
+#main-nav a {
+  padding: 0rem 0.625rem;
+  margin-right: 0.3125rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* color: rgb(189, 230, 243); */
+  color: rgb(246, 177, 0);
+  /* background-color: rgba(230, 4, 200, 0.767); */
+  /* border-radius: .625rem; */
+  /* border: solid white 2px;
+    box-shadow: .0625rem .0625rem .0625rem black; */
 }
 
-.box-carousel {
-    width: 100%;
-    height: 100vh;
-    margin-top: 50px;
-    /* margin top matches header size so fixed */
-    overflow: hidden;
-  }
+#main-nav a:hover {
+  /* border: solid black 2px; */
+  background-color: gold;
+  color: white;
+  filter: brightness(100%);
+}
 
-  .box-carousel::-webkit-scrollbar{
-      display: none;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-  }
+footer * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(255, 183, 0);
+  padding-bottom: 0.5rem;
+}
 
-  .box {
-    width: 100%;
-    transform-style: preserve-3d;
-    transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-    height: 100vh;
-    }
-
-  .box.show-front  { transform:  rotateY(   0deg); }
-  .box.show-back   { transform:  rotateY(-180deg); }
-  .box.show-top    { transform:  rotateX( -90deg); }
-  .box.show-bottom { transform:  rotateX(  90deg); }
-  .box.show-left   { transform:  rotateY(  90deg); }
-  .box.show-right  { transform:  rotateY( -90deg); }
-  
-  .face {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    font-weight: bold;
-    font-size: 50px;
-    color: white;
-    /* line-height: 200px; */
-    /* text-align: center; */
-  }
-  
-  .face--front  { background:red; }
-  .face--back   { background: green; }
-  .face--top    { background: blue; }
-  .face--bottom { background: purple; }
-  .face--left   { background: skyblue }
-  .face--right  { background: yellow; }
-  
-  .face--front  { transform: rotateY(  0deg) translateZ(100vh); }
-  .face--back   { transform: rotateY(180deg) translateZ(100vh); }
-  .face--top    { transform: rotateX( 90deg) translateZ(100vh); }
-  .face--bottom { transform: rotateX(-90deg) translateZ(100vh); }
-  .face--left   { transform: rotateY(-90deg) translateZ(100vh); }
-  .face--right  { transform: rotateY( 90deg) translateZ(100vh); }
+footer {
+  /* background-image: linear-gradient(
+    to left,
+    rgb(83, 80, 80),
+    rgb(231, 154, 225)
+  ); */
+  /* background-color: rgba(246, 246, 246, 0.472); */
+  background-color: rgba(255, 217, 0, 0.349);
  
-  .radio-selection{ 
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    top: 50px;
-    /* right: 0px; */
-    /* adding right causes issues with cropping and scrolling */
-    color: rgb(70, 70, 70);
-    font-size: 2.5vh;
-    justify-content: center;
-    min-width: 800px;
-    }
+}
 
-    .radio-selection label{
-        padding-right: 10px;
-    }
+a {
+  text-decoration: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
 
-    .radio-selection input{
-        height: 1.5vh;
-        width: 1.5vh;
-    }
+body,
+html {
+  height: 100%;
+  min-width: 1920px;
+  min-height: 1129px;
+}
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 
+.box-carousel  {
+  height: 100%;
+  margin-top: 6.875rem;
+  /* margin top matches header size so fixed */
+  overflow: scroll;
+}
 
+/* if you want image to be scrollable then overflow scroll, 
+hidden makes image not overflow from container,scrolling,
+good for homepages show content in diff zooms */
 
+.box-carousel::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
+.box {
+height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
+}
 
+.box.show-front {
+  transform: rotateY(0deg);
+}
+.box.show-back {
+  transform: rotateY(-180deg);
+}
+.box.show-top {
+  transform: rotateX(-90deg);
+}
+.box.show-bottom {
+  transform: rotateX(90deg);
+}
+.box.show-left {
+  transform: rotateY(90deg);
+}
+.box.show-right {
+  transform: rotateY(-90deg);
+}
 
+.face {
+  position: absolute;
+  width: 100%;
+    height: 100%;
+  font-weight: bold;
+  font-size: 3.125rem;
+  color: white;
+  /* line-height: 200px; */
+  /* text-align: center; */
+}
 
+.face--front {
+  background: red;
+}
+.face--back {
+  background: green;
+}
+.face--top {
+  background: blue;
+}
+.face--bottom {
+  background: purple;
+}
+.face--left {
+  background: skyblue;
+}
+.face--right {
+  background: yellow;
+}
 
+.face--front {
+  transform: rotateY(0deg) translateZ(100vh);
+}
+.face--back {
+  transform: rotateY(180deg) translateZ(100vh);
+}
+.face--top {
+  transform: rotateX(90deg) translateZ(100vh);
+}
+.face--bottom {
+  transform: rotateX(-90deg) translateZ(100vh);
+}
+.face--left {
+  transform: rotateY(-90deg) translateZ(100vh);
+}
+.face--right {
+  transform: rotateY(90deg) translateZ(100vh);
+}
 
+.radio-selection {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 2.5rem;
+  top: 6.875rem;
+  /* if changing height of header, change fixed/absolute positioning
+  things like main pic and radio panel */
+  /* right: 0px; */
+  /* adding right causes issues with cropping and scrolling */
+  color: goldenrod;
+  font-size: 1.25rem;
+  justify-content: center;
+  min-width: 1920px;
+}
 
+/* to avoid things getting cut off make sure min-width same for
+when zooming in, to keep ratios between elements consistent
+on zoom dont use viewport units, doesnt change, use rem */
 
+.radio-selection label {
+  padding-right: 4rem;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.radio-selection input {
+  height: 0.93rem;
+  width: 0.93rem;
+}
 
 /* 
 add height to elements if they overflow */
